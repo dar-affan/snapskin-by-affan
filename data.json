@@ -1,0 +1,37 @@
+{
+  "brand": "SnapSkin by Affan",
+  "instagram": "dar_affaan",
+  "twitter": "dar_affaan",
+
+  "ui": {
+    "theme": "light",
+    "accent_color": "#6c63ff"
+  },
+
+  "products": [
+    {
+      "name": "Anime Marble Phone Cover",
+      "price": 399,
+      "type": "Physical",
+      "badge": "HOT",
+      "category": "Phone Cover",
+      "image": "https://picsum.photos/300/300?anime"
+    },
+    {
+      "name": "Minimal Marble Skin",
+      "price": 299,
+      "type": "Digital",
+      "badge": "NEW",
+      "category": "Skin",
+      "image": "https://picsum.photos/300/300?marble"
+    },
+    {
+      "name": "Custom Name Skin",
+      "price": 199,
+      "type": "Digital",
+      "badge": "TRENDING",
+      "category": "Custom",
+      "image": "https://picsum.photos/300/300?custom"
+    }
+  ]
+}
