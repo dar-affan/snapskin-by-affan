@@ -1,69 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SnapSkin by Affan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>SnapSkin by Affan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fdfbfb,#ebedee);
+    color:#222;
+}
+header{
+    padding:40px 20px;
+}
+h1{
+    font-size:42px;
+    margin:0;
+}
+.tagline{
+    color:#666;
+    margin-top:8px;
+}
+.filters button{
+    margin:6px;
+    padding:8px 16px;
+    border:none;
+    border-radius:20px;
+    background:#eee;
+    cursor:pointer;
+    transition:.3s;
+}
+.filters button:hover{
+    background:#6c63ff;
+    color:white;
+}
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
+}
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+.card h3{
+    margin:10px;
+}
+.card p{
+    margin:0 10px 14px;
+    color:#666;
+}
+.price{
+    margin:10px;
+    font-weight:600;
+}
+.buy{
+    display:block;
+    text-align:center;
+    margin:10px;
+    padding:10px;
+    background:#6c63ff;
+    color:white;
+    border-radius:12px;
+    text-decoration:none;
+}
+.insta{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:white;
+    padding:12px 18px;
+    border-radius:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.insta a{
+    text-decoration:none;
+    color:#6c63ff;
+    font-weight:600;
+}
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>SnapSkin</h1>
-    <p>Premium Phone Skins</p>
+<h1>SnapSkin</h1>
+<div class="tagline">Premium Phone Skins • Anime • Marble • Carbon</div>
+
+<div class="filters">
+<button>All</button>
+<button>Anime</button>
+<button>Marble</button>
+<button>Carbon</button>
+<button>Galaxy</button>
+<button>Minimal</button>
+</div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <h2>Upgrade Your Phone Look</h2>
-    <p>Anime · Marble · Carbon · Galaxy · Minimal</p>
+<section class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606813909027-51c7b4c1a8a4">
+<h3>Anime Warrior</h3>
+<p>Bold anime inspired skin</p>
+<div class="price">₹499</div>
+<a class="buy" href="#">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618220179428-22790b461013">
+<h3>Marble White</h3>
+<p>Luxury marble finish</p>
+<div class="price">₹599</div>
+<a class="buy" href="#">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580748141549-71748dbe0bdc">
+<h3>Carbon Black</h3>
+<p>Matte carbon fiber look</p>
+<div class="price">₹549</div>
+<a class="buy" href="#">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70">
+<h3>Galaxy Purple</h3>
+<p>Cosmic premium finish</p>
+<div class="price">₹649</div>
+<a class="buy" href="#">Buy Now</a>
+</div>
+
 </section>
 
-<!-- FILTER BUTTONS -->
-<div class="filters">
-    <button onclick="filterProducts('All')">All</button>
-    <button onclick="filterProducts('Anime')">Anime</button>
-    <button onclick="filterProducts('Marble')">Marble</button>
-    <button onclick="filterProducts('Carbon')">Carbon</button>
-    <button onclick="filterProducts('Galaxy')">Galaxy</button>
-    <button onclick="filterProducts('Minimal')">Minimal</button>
+<div class="insta">
+<a href="https://instagram.com/dar_affan" target="_blank">
+📸 dar_affan
+</a>
 </div>
 
-<!-- PRODUCTS -->
-<div class="products">
-    {% for p in products %}
-    <div class="card" data-category="{{ p.category }}">
-        <img src="{{ p.image }}" alt="{{ p.name }}">
-        <h3>{{ p.name }}</h3>
-        <p class="category">{{ p.category }}</p>
-        <p class="price">₹ {{ p.price }}</p>
-        <button class="buy">Buy Now</button>
-    </div>
-    {% endfor %}
-</div>
-
-<!-- FOOTER -->
 <footer>
-    <div class="insta">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-        <span>dar_affaan</span>
-    </div>
-    <p>SnapSkin by Affan</p>
+SnapSkin by Affan © 2026
 </footer>
-
-<script>
-function filterProducts(category) {
-    let cards = document.querySelectorAll(".card");
-    cards.forEach(card => {
-        if (category === "All" || card.dataset.category === category) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-}
-</script>
 
 </body>
 </html>
