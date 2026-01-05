@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - SnapSkin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Admin Panel</h1>
+
+<form method="post">
+    <input name="name" placeholder="Product Name" required>
+    <input name="price" placeholder="Price" required>
+    <input name="image" placeholder="Image URL" required>
+    <button>Add Product</button>
+</form>
+
+<hr>
+
+<h2>Products</h2>
+
+{% for p in products %}
+<div class="admin-card">
+    {{ p.name }} - ₹{{ p.price }}
+    <a href="/delete/{{ loop.index0 }}">❌ Delete</a>
+</div>
+{% endfor %}
+
+</body>
+</html>
+
