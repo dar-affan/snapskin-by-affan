@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SnapSkin by Affan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+    <h1>SnapSkin</h1>
+    <p>Premium Phone Skins</p>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h2>Upgrade Your Phone Look</h2>
+    <p>Anime · Marble · Carbon · Galaxy · Minimal</p>
+</section>
+
+<!-- FILTER BUTTONS -->
+<div class="filters">
+    <button onclick="filterProducts('All')">All</button>
+    <button onclick="filterProducts('Anime')">Anime</button>
+    <button onclick="filterProducts('Marble')">Marble</button>
+    <button onclick="filterProducts('Carbon')">Carbon</button>
+    <button onclick="filterProducts('Galaxy')">Galaxy</button>
+    <button onclick="filterProducts('Minimal')">Minimal</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+    {% for p in products %}
+    <div class="card" data-category="{{ p.category }}">
+        <img src="{{ p.image }}" alt="{{ p.name }}">
+        <h3>{{ p.name }}</h3>
+        <p class="category">{{ p.category }}</p>
+        <p class="price">₹ {{ p.price }}</p>
+        <button class="buy">Buy Now</button>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="insta">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+        <span>dar_affaan</span>
+    </div>
+    <p>SnapSkin by Affan</p>
+</footer>
+
+<script>
+function filterProducts(category) {
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        if (category === "All" || card.dataset.category === category) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
