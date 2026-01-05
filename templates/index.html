@@ -1,54 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{ settings.brand }}</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>SnapSkin</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-<h1>{{ settings.brand }}</h1>
+<h1>SnapSkin by Affan</h1>
 
-<div class="filters">
-  <button onclick="filter('all')">All</button>
-  <button onclick="filter('physical')">Physical</button>
-  <button onclick="filter('digital')">Digital</button>
+<div class="card">
+    <h3>Anime Phone Skin</h3>
+    <p>Rs 399</p>
+    <button>Buy</button>
 </div>
 
-<div class="grid">
-{% for p in products %}
-  <div class="card {{ p.type }}">
-    <img src="{{ p.image }}">
-    <h3>{{ p.name }}</h3>
-    <p>Rs {{ p.price }}</p>
-
-    {% if p.type == "physical" %}
-      <a href="https://wa.me/91XXXXXXXXXX">Buy</a>
-    {% else %}
-      <button>Download</button>
-    {% endif %}
-  </div>
-{% endfor %}
+<div class="card">
+    <h3>Digital Wallpaper Pack</h3>
+    <p>Rs 199</p>
+    <button>Download</button>
 </div>
 
-<div class="footer">
-  <i class="fab fa-instagram"></i>
-  {{ settings.instagram }}
-</div>
-
-<script>
-function filter(type){
-  let cards = document.querySelectorAll(".card");
-  cards.forEach(c=>{
-    c.style.display =
-      type=="all" || c.classList.contains(type)
-      ? "block" : "none";
-  });
-}
-</script>
+<p style="margin-top:40px;">
+    Instagram: dar_affaan
+</p>
 
 </body>
 </html>
-
-
