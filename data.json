@@ -1,37 +1,24 @@
-{
-  "brand": "SnapSkin by Affan",
-  "instagram": "dar_affaan",
-  "twitter": "dar_affaan",
-
-  "ui": {
-    "theme": "light",
-    "accent_color": "#6c63ff"
+[
+  {
+    "id": 1,
+    "name": "Anime Phone Skin",
+    "type": "physical",
+    "price": "399",
+    "image": "https://images.unsplash.com/photo-1585079542156-2755d9c8a094"
   },
+  {
+    "id": 2,
+    "name": "Marble Luxury Skin",
+    "type": "physical",
+    "price": "499",
+    "image": "https://images.unsplash.com/photo-1607082349566-187342175e2f"
+  },
+  {
+    "id": 3,
+    "name": "Digital Anime Pack",
+    "type": "digital",
+    "price": "199",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+  }
+]
 
-  "products": [
-    {
-      "name": "Anime Marble Phone Cover",
-      "price": 399,
-      "type": "Physical",
-      "badge": "HOT",
-      "category": "Phone Cover",
-      "image": "https://picsum.photos/300/300?anime"
-    },
-    {
-      "name": "Minimal Marble Skin",
-      "price": 299,
-      "type": "Digital",
-      "badge": "NEW",
-      "category": "Skin",
-      "image": "https://picsum.photos/300/300?marble"
-    },
-    {
-      "name": "Custom Name Skin",
-      "price": 199,
-      "type": "Digital",
-      "badge": "TRENDING",
-      "category": "Custom",
-      "image": "https://picsum.photos/300/300?custom"
-    }
-  ]
-}
