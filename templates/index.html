@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,71 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: #f4f6fb;
-            color: #222;
+            background: #f6f7fb;
+            color: #333;
         }
 
         header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            padding: 20px 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
+            padding: 30px 20px;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 36px;
+            font-weight: 600;
         }
 
         header p {
+            margin-top: 10px;
+            font-size: 16px;
             opacity: 0.9;
         }
 
-        nav {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 500;
-            background: white;
-            color: #2575fc;
-            transition: 0.3s;
-        }
-
-        nav button:hover {
-            background: #000;
-            color: white;
-        }
-
         .container {
-            padding: 40px;
             max-width: 1200px;
-            margin: auto;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .section-title {
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 20px;
-            text-align: center;
+            color: #444;
         }
 
         .products {
@@ -81,14 +60,14 @@
 
         .card {
             background: white;
-            border-radius: 18px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            transition: transform 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
         }
 
         .card img {
@@ -97,108 +76,71 @@
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 18px;
+        .card-body {
+            padding: 20px;
+            text-align: center;
         }
 
-        .card-content h3 {
+        .card-body h3 {
             font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .card-content p {
-            font-size: 14px;
-            opacity: 0.8;
+            margin-bottom: 10px;
         }
 
         .price {
-            margin: 10px 0;
+            font-size: 16px;
             font-weight: 600;
-        }
-
-        .order-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
-            border: none;
-            color: white;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .order-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Order Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-        }
-
-        .modal-box {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            width: 350px;
-        }
-
-        .modal-box h2 {
             margin-bottom: 15px;
         }
 
-        .modal-box input,
-        .modal-box textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+            cursor: pointer;
         }
 
-        .modal-box button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            background: #2575fc;
-            color: white;
-            border-radius: 25px;
-            cursor: pointer;
+        .btn:hover {
+            background: #5a67d8;
         }
 
         footer {
             margin-top: 60px;
-            background: #111;
-            color: white;
-            padding: 30px;
             text-align: center;
-            position: relative;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
         }
 
+        /* Instagram badge */
         .insta {
-            position: absolute;
+            position: fixed;
             right: 20px;
             bottom: 20px;
+            background: white;
+            border-radius: 30px;
+            padding: 10px 16px;
             display: flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
         }
 
-        .insta i {
-            font-size: 22px;
-            color: #ff4b2b;
+        .insta img {
+            width: 24px;
+            height: 24px;
         }
 
-        .badge {
-            margin-top: 10px;
-            font-size: 14px;
-            opacity: 0.8;
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -206,110 +148,79 @@
 
 <header>
     <h1>SnapSkin</h1>
-    <p>Premium Phone Skins & Digital Designs</p>
-
-    <nav>
-        <button onclick="filterProducts('all')">All</button>
-        <button onclick="filterProducts('physical')">Physical Products</button>
-        <button onclick="filterProducts('digital')">Digital Products</button>
-    </nav>
+    <p>Premium Phone Skins & Digital Designs by Affan</p>
 </header>
 
 <div class="container">
-    <h2 class="section-title">Our Products</h2>
 
-    <div class="products" id="productList">
-
-        <!-- Physical -->
-        <div class="card physical">
-            <img src="https://images.unsplash.com/photo-1580910051074-7c38e93db0b0">
-            <div class="card-content">
-                <h3>Marble Phone Skin</h3>
-                <p>Premium matte finish</p>
-                <div class="price">Price: 399</div>
-                <button class="order-btn" onclick="openOrder('Marble Phone Skin')">Order</button>
+    <!-- Physical Products -->
+    <h2 class="section-title">📱 Physical Products</h2>
+    <div class="products">
+        {% for p in products.physical %}
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random={{ p.id }}">
+            <div class="card-body">
+                <h3>{{ p.name }}</h3>
+                <div class="price">₹ {{ p.price }}</div>
+                <button class="btn" onclick="orderProduct('{{ p.name }}')">Order Now</button>
             </div>
         </div>
-
-        <div class="card physical">
-            <img src="https://images.unsplash.com/photo-1603898037225-50f28c1a1b6c">
-            <div class="card-content">
-                <h3>Anime Skin</h3>
-                <p>High quality anime print</p>
-                <div class="price">Price: 449</div>
-                <button class="order-btn" onclick="openOrder('Anime Skin')">Order</button>
-            </div>
-        </div>
-
-        <!-- Digital -->
-        <div class="card digital">
-            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70">
-            <div class="card-content">
-                <h3>Digital Wallpaper Pack</h3>
-                <p>Instant download</p>
-                <div class="price">Price: 199</div>
-                <button class="order-btn" onclick="openOrder('Digital Wallpaper Pack')">Order</button>
-            </div>
-        </div>
-
-        <div class="card digital">
-            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
-            <div class="card-content">
-                <h3>Minimal UI Pack</h3>
-                <p>For creators</p>
-                <div class="price">Price: 249</div>
-                <button class="order-btn" onclick="openOrder('Minimal UI Pack')">Order</button>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
-</div>
 
-<!-- Order Modal -->
-<div class="modal" id="orderModal">
-    <div class="modal-box">
-        <h2>Place Order</h2>
-        <input type="text" id="productName" readonly>
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Phone / WhatsApp">
-        <textarea placeholder="Address / Notes"></textarea>
-        <button onclick="closeOrder()">Submit Order</button>
+    <!-- Digital Products -->
+    <h2 class="section-title" style="margin-top:50px;">💾 Digital Products</h2>
+    <div class="products">
+        {% for p in products.digital %}
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random={{ p.id }}">
+            <div class="card-body">
+                <h3>{{ p.name }}</h3>
+                <div class="price">₹ {{ p.price }}</div>
+                <button class="btn" onclick="orderProduct('{{ p.name }}')">Order Now</button>
+            </div>
+        </div>
+        {% endfor %}
     </div>
+
 </div>
 
 <footer>
-    <h3>SnapSkin by Affan</h3>
-    <div class="badge">Designed & Developed by Dar Affan</div>
-
-    <div class="insta">
-        <i class="fa-brands fa-instagram"></i>
-        <span>@dar_affan</span>
-    </div>
+    © 2026 SnapSkin by Affan. All rights reserved.
 </footer>
 
+<!-- Instagram -->
+<a class="insta" href="https://instagram.com/dar_affan" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png">
+    dar_affan
+</a>
+
 <script>
-    function filterProducts(type) {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            if (type === 'all') {
-                card.style.display = 'block';
-            } else {
-                card.style.display = card.classList.contains(type) ? 'block' : 'none';
-            }
+    function orderProduct(productName) {
+        const name = prompt("Enter your name");
+        const phone = prompt("Enter your phone number");
+
+        if (!name || !phone) {
+            alert("Details required!");
+            return;
+        }
+
+        fetch("/order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `name=${name}&phone=${phone}&product=${productName}`
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("Order placed successfully!");
         });
-    }
-
-    function openOrder(product) {
-        document.getElementById('productName').value = product;
-        document.getElementById('orderModal').style.display = 'flex';
-    }
-
-    function closeOrder() {
-        alert("Order submitted! We will contact you.");
-        document.getElementById('orderModal').style.display = 'none';
     }
 </script>
 
 </body>
 </html>
+
+
 
