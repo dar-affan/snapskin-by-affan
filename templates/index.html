@@ -2,214 +2,250 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SnapSkin by Affan</title>
+<title>SnapSkin® – Premium Skins</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box}
 body{
     margin:0;
-    font-family: 'Poppins', sans-serif;
-    background:#f4f6fb;
-    color:#222;
+    font-family:'Inter',sans-serif;
+    background:#ffffff;
+    color:#111;
 }
-header{
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    color:white;
-    padding:25px;
-    text-align:center;
-    font-size:32px;
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    border-bottom:1px solid #eee;
+}
+nav h1{
+    font-size:22px;
     font-weight:700;
 }
-header span{
-    font-size:14px;
-    display:block;
-    opacity:.9;
+nav span{
+    font-weight:400;
+    color:#666;
 }
-
-.tabs{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin:25px;
-}
-.tabs button{
-    padding:10px 22px;
-    border:none;
-    border-radius:25px;
+nav button{
+    padding:8px 16px;
+    border:1px solid #111;
     background:#111;
     color:#fff;
+    border-radius:6px;
     cursor:pointer;
-    font-size:14px;
 }
-.tabs button:hover{background:#667eea}
 
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:22px;
-    padding:30px;
+/* HERO */
+.hero{
+    padding:80px 40px;
     max-width:1100px;
     margin:auto;
 }
-
-.card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 15px 30px rgba(0,0,0,.1);
-    transition:.3s;
+.hero h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:12px;
 }
-.card:hover{transform:translateY(-6px)}
+.hero p{
+    font-size:18px;
+    color:#555;
+    max-width:520px;
+}
 
+/* SECTION */
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:40px;
+}
+.section h3{
+    font-size:26px;
+    margin-bottom:24px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:26px;
+}
+.card{
+    border:1px solid #eee;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.25s;
+}
+.card:hover{
+    box-shadow:0 12px 40px rgba(0,0,0,.08);
+}
 .card img{
     width:100%;
-    height:200px;
+    height:220px;
     object-fit:cover;
 }
-.card h3{
-    margin:12px;
+.card .info{
+    padding:18px;
+}
+.card h4{
+    margin:0 0 6px;
+    font-size:18px;
 }
 .card p{
-    margin:0 12px;
+    margin:0;
+    color:#666;
+    font-size:14px;
+}
+.price{
+    margin-top:10px;
     font-weight:600;
 }
 .card button{
-    margin:14px;
-    width:calc(100% - 28px);
+    margin-top:14px;
+    width:100%;
     padding:12px;
     border:none;
-    border-radius:14px;
-    background:#667eea;
-    color:white;
-    font-size:15px;
+    background:#111;
+    color:#fff;
+    border-radius:8px;
     cursor:pointer;
 }
-.card button:hover{background:#764ba2}
 
-.footer{
+/* FOOTER */
+footer{
+    padding:30px;
+    border-top:1px solid #eee;
     text-align:center;
-    padding:18px;
     color:#666;
 }
 
-.insta{
-    position:fixed;
-    right:15px;
-    bottom:15px;
-    background:#fff;
-    padding:10px 14px;
-    border-radius:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-weight:600;
-}
-.insta img{
-    width:22px;
-}
-
+/* MODAL */
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.6);
+    background:rgba(0,0,0,.5);
     justify-content:center;
     align-items:center;
 }
 .modal-box{
-    background:white;
-    padding:22px;
-    border-radius:16px;
-    width:300px;
+    background:#fff;
+    width:340px;
+    padding:24px;
+    border-radius:12px;
+}
+.modal-box h3{
+    margin-top:0;
 }
 .modal-box input{
     width:100%;
     padding:10px;
     margin:6px 0;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+.modal-box button{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    background:#111;
+    color:#fff;
+    border-radius:6px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-SnapSkin
-<span>by Affan</span>
-</header>
+<nav>
+<h1>SnapSkin<span>®</span></h1>
+<button onclick="scrollToProducts()">Shop Now</button>
+</nav>
 
-<div class="tabs">
-<button onclick="filter('all')">All Products</button>
-<button onclick="filter('physical')">Physical</button>
-<button onclick="filter('digital')">Digital</button>
-</div>
+<section class="hero">
+<h2>Premium Mobile Skins<br>Designed to Impress</h2>
+<p>High-quality physical skins and exclusive digital designs crafted for modern devices.</p>
+</section>
 
+<section class="section" id="products">
+<h3>Physical Products</h3>
 <div class="products">
-
-<div class="card physical">
+<div class="card">
 <img src="https://images.unsplash.com/photo-1585079542156-2755d9c8a094">
-<h3>Anime Phone Skin</h3>
-<p>₹399</p>
-<button onclick="order('Anime Phone Skin',399)">Order Now</button>
+<div class="info">
+<h4>Anime Matte Skin</h4>
+<p>Scratch-resistant premium vinyl</p>
+<div class="price">₹399</div>
+<button onclick="order('Anime Matte Skin',399)">Order</button>
+</div>
 </div>
 
-<div class="card physical">
+<div class="card">
 <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f">
-<h3>Marble Luxury Skin</h3>
-<p>₹499</p>
-<button onclick="order('Marble Luxury Skin',499)">Order Now</button>
+<div class="info">
+<h4>Luxury Marble Skin</h4>
+<p>Minimal, elegant finish</p>
+<div class="price">₹499</div>
+<button onclick="order('Luxury Marble Skin',499)">Order</button>
 </div>
+</div>
+</div>
+</section>
 
-<div class="card digital">
+<section class="section">
+<h3>Digital Products</h3>
+<div class="products">
+<div class="card">
 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
-<h3>Digital Anime Pack</h3>
-<p>₹199</p>
-<button onclick="order('Digital Anime Pack',199)">Order Now</button>
+<div class="info">
+<h4>Anime Digital Pack</h4>
+<p>Instant download (HD)</p>
+<div class="price">₹199</div>
+<button onclick="order('Anime Digital Pack',199)">Order</button>
 </div>
-
 </div>
-
-<div class="footer">
-© 2026 SnapSkin. All rights reserved.
 </div>
+</section>
 
-<div class="insta">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-@dar_affaan
-</div>
+<footer>
+© 2026 SnapSkin by Affan
+</footer>
 
-<div class="modal" id="box">
+<div class="modal" id="modal">
 <div class="modal-box">
-<h3 id="title"></h3>
-<input id="name" placeholder="Your Name">
-<input id="phone" placeholder="Phone Number">
-<button onclick="send()">Confirm Order</button>
+<h3 id="productTitle"></h3>
+<input id="custName" placeholder="Full Name">
+<input id="custPhone" placeholder="Phone / WhatsApp">
+<button onclick="sendOrder()">Place Order</button>
 </div>
 </div>
 
 <script>
-let p="",pr="";
+let product="",price="";
 
-function filter(t){
- document.querySelectorAll('.card').forEach(c=>{
-  c.style.display=(t=='all'||c.classList.contains(t))?'block':'none';
- });
+function scrollToProducts(){
+ document.getElementById("products").scrollIntoView({behavior:"smooth"});
 }
 
-function order(x,y){
- p=x; pr=y;
- document.getElementById("title").innerText=x+" ₹"+y;
- document.getElementById("box").style.display="flex";
+function order(p,pr){
+ product=p; price=pr;
+ document.getElementById("productTitle").innerText=p+" – ₹"+pr;
+ document.getElementById("modal").style.display="flex";
 }
 
-function send(){
- let n=name.value;
- let ph=phone.value;
- let m=`Order:%0A${p}%0APrice: ₹${pr}%0AName: ${n}%0APhone: ${ph}`;
- window.open(`mailto:onionispink@gmail.com?subject=New Order&body=${m}`);
- window.open(`https://wa.me/919797993386?text=${m}`);
- document.getElementById("box").style.display="none";
+function sendOrder(){
+ let n=custName.value;
+ let ph=custPhone.value;
+ let msg=`New Order%0AProduct: ${product}%0APrice: ₹${price}%0AName: ${n}%0APhone: ${ph}`;
+ window.open(`mailto:onionispink@gmail.com?subject=New Order&body=${msg}`);
+ window.open(`https://wa.me/919797993386?text=${msg}`);
+ document.getElementById("modal").style.display="none";
 }
 </script>
 
